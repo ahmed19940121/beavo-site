@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to delete a Beavo account and understand what happens to cloud and local app data.">
+  <title>Delete Your Beavo Account</title>
+  <style>
+    :root{--ink:#211c18;--muted:#675f58;--paper:#fffdf9;--warm:#fff2e4;--sage:#e7f1eb;--green:#2f775f;--orange:#ef7f22;--line:#ddd4ca;--dark:#17231e;--red:#a7352a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--green)}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:20;border:2px solid var(--ink)}header{border-bottom:1px solid var(--line);background:#fff}.nav{max-width:1050px;margin:auto;min-height:68px;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{color:var(--ink);font-size:25px;font-weight:950;text-decoration:none}.brand i{display:inline-block;width:9px;height:28px;background:var(--orange);vertical-align:-5px;margin-right:10px}.links{display:flex;gap:18px;flex-wrap:wrap}.links a{color:var(--ink);font-size:14px;font-weight:800;text-decoration:none}.page-head{background:var(--sage);border-bottom:1px solid var(--line);padding:58px 22px}.page-head div,.content{max-width:900px;margin:auto}.eyebrow{font-size:13px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(40px,7vw,68px);line-height:1.05;margin:8px 0 14px}h2{font-size:29px;line-height:1.2;margin:42px 0 10px}.lead{font-size:20px;color:var(--muted);max-width:760px}.content{padding:52px 22px 76px}.setup{border:3px solid var(--orange);background:var(--warm);padding:16px;border-radius:8px;margin-bottom:34px}.steps{counter-reset:step;display:grid;gap:12px;margin:22px 0}.step{counter-increment:step;border:1px solid var(--line);border-radius:8px;padding:18px 18px 18px 72px;position:relative;background:#fff}.step:before{content:counter(step);position:absolute;left:18px;top:18px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-weight:900}.step h3{margin:0 0 4px}.step p{margin:0;color:var(--muted)}.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.data{border-top:6px solid var(--green);background:var(--sage);padding:20px;border-radius:8px}.data.keep{border-top-color:var(--orange);background:var(--warm)}.important{background:#fff1ef;border-left:8px solid var(--red);padding:20px;margin-top:34px}footer{background:#151310;color:#eee7df;padding:36px 22px}.footer{max-width:900px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer a{color:#fff}.small{font-size:14px;color:#cfc5bb}a:focus-visible{outline:4px solid #ffc08a;outline-offset:4px}@media(max-width:720px){.links a:first-child{display:none}.data-grid{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <!-- BEFORE PUBLISHING: replace REPLACE_WITH_SUPPORT_EMAIL and confirm deletion behaviour in the production Firebase project. -->
+  <a class="skip" href="#main">Skip to content</a>
+  <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><i aria-hidden="true"></i>BEAVO</a><div class="links"><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></nav></header>
+  <main id="main">
+    <section class="page-head"><div><div class="eyebrow">Account control</div><h1>Delete your Beavo account</h1><p class="lead">Signed-in users can start deletion inside Beavo without contacting support.</p><p><strong>Last updated:</strong> 15 July 2026</p></div></section>
+    <article class="content">
+      <div class="setup"><strong>Production check required:</strong> test this complete route on an actual iPhone against the production Firebase project before publishing this page.</div>
+
+      <h2>Delete inside the app</h2>
+      <div class="steps">
+        <div class="step"><h3>Open Profile</h3><p>Launch Beavo and select Profile in the bottom navigation.</p></div>
+        <div class="step"><h3>Find Account</h3><p>Scroll to the Account section. Confirm that the correct Apple or Google account is shown.</p></div>
+        <div class="step"><h3>Select Delete my account</h3><p>Read the warning, then confirm permanent cloud-account deletion.</p></div>
+        <div class="step"><h3>Reauthenticate if asked</h3><p>For security, Apple or Google may ask the user to sign in again before deletion can finish.</p></div>
+      </div>
+
+      <h2>What deletion does</h2>
+      <div class="data-grid">
+        <section class="data"><h3>Deleted from Beavo cloud services</h3><ul><li>Firebase Authentication account</li><li>Beavo cloud profile, including preferred name</li><li>Cloud-synchronised progress and planning data owned by the account</li><li>Community posts owned by the account, where present</li></ul></section>
+        <section class="data keep"><h3>Not automatically removed from the device</h3><ul><li>Guest or local progress remaining in device storage</li><li>Calendar events already added to Google or Apple Calendar</li><li>Exported .ics files</li><li>Support correspondence or limited records retained for legal and security reasons</li></ul></section>
+      </div>
+      <p>To clear local Beavo progress, use Reset all progress in Profile or remove the app and its local data. Calendar entries must be removed in the relevant calendar app.</p>
+
+      <h2>If the app cannot be accessed</h2>
+      <p>Email <a href="mailto:REPLACE_WITH_SUPPORT_EMAIL?subject=Beavo%20account%20deletion">REPLACE_WITH_SUPPORT_EMAIL</a> with the subject "Beavo account deletion". Include the sign-in provider used and enough information to locate the account. Do not send a password or authentication code. We may request identity verification before acting.</p>
+      <p>We aim to respond to verified deletion requests within 30 days. In-app deletion is designed to complete immediately when authentication and network requests succeed.</p>
+
+      <div class="important"><strong>Deletion is permanent:</strong> deleted cloud data may not be recoverable. Removing Beavo does not cancel clinical appointments or remove events from an external calendar.</div>
+    </article>
+  </main>
+  <footer><div class="footer"><div><strong>BEAVO</strong><p class="small">Independent pregnancy education and partner support.</p></div><div><a href="index.html">Home</a> &nbsp; <a href="support.html">Support</a> &nbsp; <a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a><p class="small">&copy; 2026 Ahmed Mohamed Nur, trading as Beavo.</p></div></div></footer>
+</body>
+</html>
