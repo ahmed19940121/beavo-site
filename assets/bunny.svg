@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="A rabbit, twitching its ears">
+<style>
+ .b{animation:hop 2.8s ease-in-out infinite}
+ .earL{transform-box:fill-box;transform-origin:50% 100%;animation:twitchL 2.8s ease-in-out infinite}
+ .earR{transform-box:fill-box;transform-origin:50% 100%;animation:twitchR 2.8s ease-in-out infinite}
+ .lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:blink 5s infinite}
+ @keyframes hop{0%,70%,100%{transform:translateY(0)}82%{transform:translateY(-13px)}92%{transform:translateY(0)}}
+ @keyframes twitchL{0%,60%,100%{transform:rotate(-4deg)}70%{transform:rotate(-13deg)}}
+ @keyframes twitchR{0%,60%,100%{transform:rotate(4deg)}75%{transform:rotate(13deg)}}
+ @keyframes blink{0%,93%{transform:scaleY(0)}95%,97%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+ @media(prefers-reduced-motion:reduce){.b,.earL,.earR,.lid{animation:none}}
+</style>
+<g transform="translate(120,150)"><g class="b">
+  <ellipse class="earL" cx="-20" cy="-74" rx="13" ry="42" fill="#C9A98C"/>
+  <ellipse class="earL" cx="-20" cy="-74" rx="6" ry="31" fill="#F0C9C2"/>
+  <ellipse class="earR" cx="20" cy="-74" rx="13" ry="42" fill="#C9A98C"/>
+  <ellipse class="earR" cx="20" cy="-74" rx="6" ry="31" fill="#F0C9C2"/>
+  <ellipse cx="0" cy="20" rx="50" ry="44" fill="#C9A98C"/>
+  <ellipse cx="0" cy="30" rx="30" ry="26" fill="#EFE0D0"/>
+  <circle cx="0" cy="-24" r="38" fill="#C9A98C"/>
+  <circle cx="-14" cy="-30" r="6.5" fill="#3A2E22"/>
+  <circle cx="14" cy="-30" r="6.5" fill="#3A2E22"/>
+  <circle cx="-12" cy="-32.5" r="2.2" fill="#fff"/>
+  <circle cx="16" cy="-32.5" r="2.2" fill="#fff"/>
+  <ellipse class="lid" cx="-14" cy="-37" rx="7.5" ry="7" fill="#C9A98C"/>
+  <ellipse class="lid" cx="14" cy="-37" rx="7.5" ry="7" fill="#C9A98C"/>
+  <path d="M0 -14 l-6 7 h12 z" fill="#E08A8A"/>
+  <path d="M0 -7 v5 M-8 2 q8 6 16 0" stroke="#8A6B52" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="52" cy="34" r="13" fill="#EFE0D0"/>
+</g></g>
+</svg>

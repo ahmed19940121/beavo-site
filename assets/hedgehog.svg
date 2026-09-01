@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="A sleeping hedgehog">
+<style>
+ .b{transform-box:view-box;transform-origin:50% 80%;animation:breathe 3.4s ease-in-out infinite}
+ .z{opacity:0;animation:rise 3.6s ease-in-out infinite}
+ .z2{animation-delay:1.2s}.z3{animation-delay:2.4s}
+ @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+ @keyframes rise{0%{opacity:0;transform:translate(0,0) scale(.7)}
+                 25%{opacity:.9}
+                 100%{opacity:0;transform:translate(16px,-42px) scale(1.15)}}
+ @media(prefers-reduced-motion:reduce){.b{animation:none}.z{animation:none;opacity:.55}}
+</style>
+<g transform="translate(116,142)"><g class="b">
+  <path d="M-70 22 q4 -62 46 -74 q46 -14 74 30 q16 26 6 44 z" fill="#7C5B44"/>
+  <g fill="#5E4433">
+    <path d="M-56 -6 l-12 -20 l20 6 z"/><path d="M-30 -30 l-8 -24 l20 12 z"/>
+    <path d="M-2 -44 l0 -26 l18 18 z"/><path d="M28 -48 l10 -22 l12 22 z"/>
+    <path d="M54 -34 l20 -12 l4 22 z"/>
+  </g>
+  <ellipse cx="-46" cy="18" rx="34" ry="26" fill="#E3C9A8"/>
+  <path d="M-70 14 q-10 4 -10 12" stroke="#C9A882" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="-74" cy="20" r="7" fill="#4A382A"/>
+  <path d="M-58 12 q6 5 12 0" stroke="#4A382A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="-34" cy="26" r="7" fill="#F0B9A6" opacity=".7"/>
+</g>
+<g fill="#3E7A5B" font-family="system-ui,sans-serif" font-weight="800">
+  <text class="z"  x="150" y="76" font-size="20">z</text>
+  <text class="z z2" x="150" y="76" font-size="26">z</text>
+  <text class="z z3" x="150" y="76" font-size="16">z</text>
+</g></g>
+</svg>

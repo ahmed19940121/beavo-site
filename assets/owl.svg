@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="An owl, blinking">
+<style>
+ .b{animation:sway 3.6s ease-in-out infinite}
+ .lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:blink 4.2s infinite}
+ .wingL,.wingR{transform-box:fill-box;animation:tuck 3.6s ease-in-out infinite}
+ .wingL{transform-origin:80% 10%}.wingR{transform-origin:20% 10%}
+ @keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+ @keyframes tuck{0%,100%{transform:rotate(0)}50%{transform:rotate(6deg)}}
+ @keyframes blink{0%,92%{transform:scaleY(0)}94%,97%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+ @media(prefers-reduced-motion:reduce){.b,.lid,.wingL,.wingR{animation:none}}
+</style>
+<g transform="translate(120,126)"><g class="b">
+  <path d="M-52 -46 l6 -30 l24 20 z" fill="#8A5A34"/>
+  <path d="M52 -46 l-6 -30 l-24 20 z" fill="#8A5A34"/>
+  <ellipse cx="0" cy="0" rx="58" ry="62" fill="#A26D3E"/>
+  <ellipse cx="0" cy="14" rx="38" ry="42" fill="#E8D5B8"/>
+  <path class="wingL" d="M-52 -14 q-16 30 -2 54 q14 4 20 -14 z" fill="#8A5A34"/>
+  <path class="wingR" d="M52 -14 q16 30 2 54 q-14 4 -20 -14 z" fill="#8A5A34"/>
+  <circle cx="-22" cy="-16" r="21" fill="#F7EFE0"/>
+  <circle cx="22" cy="-16" r="21" fill="#F7EFE0"/>
+  <circle cx="-22" cy="-16" r="10" fill="#3A2E22"/>
+  <circle cx="22" cy="-16" r="10" fill="#3A2E22"/>
+  <circle cx="-19" cy="-19" r="3.4" fill="#fff"/>
+  <circle cx="25" cy="-19" r="3.4" fill="#fff"/>
+  <ellipse class="lid" cx="-22" cy="-37" rx="22" ry="21" fill="#A26D3E"/>
+  <ellipse class="lid" cx="22" cy="-37" rx="22" ry="21" fill="#A26D3E"/>
+  <path d="M0 -8 l-9 12 h18 z" fill="#EF8A24"/>
+  <path d="M-16 62 h14 M2 62 h14" stroke="#EF8A24" stroke-width="7" stroke-linecap="round"/>
+</g></g>
+</svg>

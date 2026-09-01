@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="A bird, flying">
+<style>
+ .b{animation:glide 3.2s ease-in-out infinite}
+ .wing{transform-box:fill-box;transform-origin:38% 92%;animation:flap 1s ease-in-out infinite}
+ .lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:blink 4.4s infinite}
+ @keyframes glide{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-15px) rotate(2deg)}}
+ @keyframes flap{0%,100%{transform:rotate(6deg) scaleY(1)}50%{transform:rotate(-30deg) scaleY(.82)}}
+ @keyframes blink{0%,94%{transform:scaleY(0)}96%,98%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+ @media(prefers-reduced-motion:reduce){.b,.wing,.lid{animation:none}}
+</style>
+<g transform="translate(120,124)"><g class="b">
+  <!-- tail -->
+  <path d="M-40 2 l-42 -16 l6 20 l-8 18 z" fill="#2F5D46"/>
+  <!-- body -->
+  <ellipse cx="0" cy="4" rx="44" ry="31" fill="#3E7A5B"/>
+  <!-- belly -->
+  <ellipse cx="4" cy="14" rx="30" ry="19" fill="#DCEBDF"/>
+  <!-- head -->
+  <circle cx="34" cy="-20" r="25" fill="#3E7A5B"/>
+  <!-- beak -->
+  <path d="M57 -20 l24 7 l-24 8 z" fill="#EF8A24"/>
+  <!-- eye -->
+  <circle cx="41" cy="-26" r="6" fill="#22332A"/>
+  <circle cx="43.5" cy="-28.5" r="2.2" fill="#fff"/>
+  <ellipse class="lid" cx="41" cy="-33" rx="7" ry="6.5" fill="#3E7A5B"/>
+  <!-- legs -->
+  <path d="M-2 33 v12 M12 33 v12" stroke="#EF8A24" stroke-width="5" stroke-linecap="round"/>
+  <!-- the single near wing, drawn last so it sits above the body -->
+  <path class="wing" d="M-14 -6 q22 -46 54 -30 q-6 34 -40 44 z" fill="#5FA37A"/>
+</g></g>
+</svg>
