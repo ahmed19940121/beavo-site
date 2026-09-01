@@ -4,36 +4,238 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Contact Beavo support, find help with accounts and calendars, and read important medical-safety information.">
+  <meta name="theme-color" content="#17231e">
+  <link rel="icon" href="assets/icon.webp">
   <title>Beavo Support</title>
+  <script>document.documentElement.className+=' js';</script>
   <style>
-    :root{--ink:#211c18;--muted:#675f58;--paper:#fffdf9;--warm:#fff2e4;--sage:#e7f1eb;--green:#2f775f;--orange:#ef7f22;--line:#ddd4ca;--dark:#17231e;--red:#a7352a}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--green)}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:20;border:2px solid var(--ink)}header{border-bottom:1px solid var(--line);background:#fff}.nav{max-width:1050px;margin:auto;min-height:68px;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{color:var(--ink);font-size:25px;font-weight:950;text-decoration:none}.brand i{display:inline-block;width:9px;height:28px;background:var(--orange);vertical-align:-5px;margin-right:10px}.links{display:flex;gap:18px;flex-wrap:wrap}.links a{color:var(--ink);font-size:14px;font-weight:800;text-decoration:none}.page-head{background:var(--sage);border-bottom:1px solid var(--line);padding:58px 22px}.page-head div,.content,.contact-inner{max-width:900px;margin:auto}.eyebrow{font-size:13px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(40px,7vw,68px);line-height:1.05;margin:8px 0 14px}h2{font-size:29px;line-height:1.2;margin:42px 0 10px}h3{font-size:20px;margin:0 0 6px}.lead{font-size:20px;color:var(--muted);max-width:720px}.content{padding:54px 22px 70px}.setup{border:3px solid var(--orange);background:var(--warm);padding:18px;border-radius:8px;margin-bottom:34px}.contact{background:var(--dark);color:#fff;padding:40px 22px}.contact a{color:#ffc08a}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.contact-item{border-top:4px solid var(--orange);padding-top:12px}.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq article{border:1px solid var(--line);background:#fff;border-radius:8px;padding:20px}.faq p{margin:0;color:var(--muted)}.urgent{border-left:8px solid var(--red);background:#fff1ef;padding:20px;margin-top:40px}.urgent h2{margin:0 0 8px;color:#7d231c}footer{background:#151310;color:#eee7df;padding:36px 22px}.footer{max-width:900px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer a{color:#fff}.small{font-size:14px;color:#cfc5bb}a:focus-visible{outline:4px solid #ffc08a;outline-offset:4px}@media(max-width:720px){.links a:first-child{display:none}.contact-grid,.faq{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+    /* ============================================================
+       BEAVO interior pages. Same design system as index.html, kept
+       inline rather than in a shared stylesheet so each page stands
+       on its own -- these are the pages an App Store reviewer opens,
+       and one failed request should not strip a legal page bare.
+       ============================================================ */
+    :root{
+      --ink:#211c18; --muted:#675f58; --faint:#736a62;
+      --paper:#fffdf9; --warm:#fff2e4; --sage:#e7f1eb;
+      --green:#2f775f; --green-deep:#1e5644; --orange:#ef7f22; --orange-deep:#a8500a;
+      --line:#ddd4ca; --dark:#17231e; --red:#a7352a;
+      --pad:clamp(20px,5vw,40px); --maxw:1180px;
+      --ease:cubic-bezier(.16,1,.3,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--paper);color:var(--ink);
+      font:17px/1.68 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      font-synthesis-weight:none;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{color:var(--green-deep)}
+    a:hover{text-decoration-thickness:2px}
+    h1,h2,h3{letter-spacing:-.026em;font-weight:900;margin:0}
+    .skip{position:absolute;left:-9999px}
+    .skip:focus{left:12px;top:12px;z-index:60;background:#fff;padding:12px;border:3px solid var(--ink);border-radius:6px}
+    a:focus-visible,button:focus-visible{outline:4px solid var(--orange);outline-offset:4px;border-radius:4px}
+    .inner{max-width:var(--maxw);margin:auto;padding-inline:var(--pad)}
+
+    /* ---------- header ---------- */
+    header{position:sticky;top:0;z-index:40;background:rgba(255,253,249,.92);
+      backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{max-width:var(--maxw);margin:auto;min-height:70px;padding:10px var(--pad);
+      display:flex;align-items:center;gap:24px}
+    .brand{color:var(--ink);font-size:25px;font-weight:950;text-decoration:none;letter-spacing:-.03em;
+      display:inline-flex;align-items:center;margin-right:auto}
+    .brand i{width:9px;height:27px;background:var(--orange);margin-right:11px;display:inline-block;
+      transform-origin:50% 100%;transition:transform .5s var(--ease)}
+    .brand:hover i{transform:scaleY(1.22)}
+    .links{display:flex;gap:22px;align-items:center;order:2}
+    .links a{color:var(--ink);font-size:14px;font-weight:800;text-decoration:none;transition:opacity .2s}
+    .links a:hover{opacity:.62}
+    .cta{order:3;flex:none;background:var(--orange);color:#211c18;padding:10px 16px;border-radius:999px;
+      min-height:44px;display:inline-flex;align-items:center;font-size:14px;font-weight:800;text-decoration:none}
+    .cta:hover{background:var(--orange-deep);color:#fff}
+
+    /* ---------- page hero ---------- */
+    .phero{background:var(--dark);color:#fff;padding:clamp(56px,9vh,104px) 0 clamp(48px,7vh,80px);position:relative;overflow:hidden}
+    .phero:before{content:"";position:absolute;width:52vw;height:52vw;border-radius:50%;filter:blur(80px);
+      background:#2f775f;opacity:.34;right:-14vw;top:-24vw;pointer-events:none}
+    .phero .inner{position:relative}
+    .phero .eyebrow{font-size:12.5px;font-weight:900;letter-spacing:.19em;text-transform:uppercase;color:#ffce9e}
+    .phero h1{font-size:clamp(38px,7vw,80px);line-height:1.0;margin:12px 0 0;max-width:16ch}
+    .phero .lead{font-size:clamp(18px,2.1vw,22px);color:#ded7cf;max-width:62ch;margin:20px 0 0}
+    .phero .stamp{margin:22px 0 0;font-size:13.5px;font-weight:800;letter-spacing:.04em;color:#a9b6ad;
+      border-top:1px solid rgba(255,255,255,.18);padding-top:16px;display:inline-block}
+
+    /* ---------- prose ---------- */
+    .prose{max-width:820px;margin:auto;padding:clamp(44px,7vh,76px) var(--pad) clamp(64px,10vh,104px)}
+    .prose>h2{font-size:clamp(25px,3.3vw,36px);line-height:1.12;margin:clamp(40px,6vh,62px) 0 14px;
+      padding-top:22px;border-top:3px solid var(--ink)}
+    .prose>h2:first-child{margin-top:0;padding-top:0;border-top:0}
+    .prose h3{font-size:19px;margin:26px 0 6px}
+    .prose p{margin:0 0 16px;max-width:68ch}
+    .prose ul{padding-left:22px;margin:0 0 16px}
+    .prose li{margin:8px 0}
+
+    /* ---------- callouts ---------- */
+    .note,.alert,.good{border-radius:12px;padding:20px 22px;margin:26px 0}
+    .note p:last-child,.alert p:last-child,.good p:last-child{margin-bottom:0}
+    .note{background:var(--warm);border-left:7px solid var(--orange)}
+    .alert{background:#fff1ef;border-left:7px solid var(--red)}
+    .alert h2{color:#7d231c;font-size:22px;margin:0 0 8px;border:0;padding:0}
+    .good{background:var(--sage);border-left:7px solid var(--green)}
+
+    /* ---------- cards ---------- */
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+    .card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--green);
+      border-radius:10px;padding:20px}
+    .card:nth-child(even){border-top-color:var(--orange)}
+    .card h3{margin:0 0 7px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:16px}
+    .card ul{margin:0;padding-left:20px;color:var(--muted);font-size:16px}
+
+    /* ---------- steps ---------- */
+    .steps{counter-reset:step;display:grid;gap:12px;margin:26px 0}
+    .step{counter-increment:step;background:#fff;border:1px solid var(--line);border-radius:10px;
+      padding:18px 20px 18px 74px;position:relative}
+    .step:before{content:counter(step);position:absolute;left:20px;top:17px;width:38px;height:38px;
+      border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-weight:900;font-size:17px}
+    .step h3{margin:0 0 3px;font-size:18px}
+    .step p{margin:0;color:var(--muted);font-size:16px}
+
+    /* ---------- table ---------- */
+    .tablewrap{overflow-x:auto;margin:22px 0}
+    table{width:100%;border-collapse:collapse;min-width:560px}
+    th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:13px 10px;font-size:16px}
+    th{background:var(--sage);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+    td:first-child{font-weight:700}
+
+    /* ---------- contact strip ---------- */
+    .contactgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+    .contactgrid div{border-top:5px solid var(--orange);padding-top:14px}
+    .contactgrid h3{margin:0 0 5px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+    .contactgrid p{margin:0;font-size:17px;font-weight:700}
+    .contactgrid a{margin:0;font-size:17px;font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+
+    /* ---------- footer ---------- */
+    footer{background:#141210;color:#eee7df;padding:clamp(44px,6vh,64px) 0 40px}
+    footer a{color:#ffce9e}
+    .footer-grid{max-width:var(--maxw);margin:auto;padding-inline:var(--pad);
+      display:grid;grid-template-columns:1.1fr 1fr;gap:34px}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+    .footer-links a{font-weight:800;font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+    .small{font-size:13.5px;color:#b9b0a7;line-height:1.6;margin:0 0 8px;max-width:56ch}
+    footer .brand{color:#fff}
+
+    /* ---------- reveal, gated on .js so nothing is ever hidden ---------- */
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+    .js .rv.in{opacity:1;transform:none}
+
+    @media(max-width:820px){
+      .cards,.contactgrid,.footer-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:680px){
+      /* Two rows on a phone: brand and the button, then the links as a
+         scrollable strip. Hiding them outright left the header with no
+         navigation in it -- on these pages, no way back to the others. */
+      .nav{flex-wrap:wrap;row-gap:0;padding-bottom:0;gap:12px}
+      .cta{order:2}                      /* stays on row one, beside the brand */
+      .links{order:3;width:100%;gap:0;overflow-x:auto;scrollbar-width:none;
+        margin:0 calc(var(--pad)*-1);padding:0 calc(var(--pad) - 8px);border-top:1px solid var(--line)}
+      .links::-webkit-scrollbar{display:none}
+      .links a{flex:none;min-height:46px;display:inline-flex;align-items:center;padding:0 8px;font-size:13px;white-space:nowrap}
+      .step{padding:16px 16px 16px 64px}
+      .step:before{left:14px;width:34px;height:34px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .phero:before{display:none}
+      .js .rv{opacity:1;transform:none;transition:none}
+    }
+    @media print{header{position:static}.phero{background:#fff;color:#000}.phero h1{color:#000}}
   </style>
 </head>
 <body>
-  <!-- Review the contact details regularly and keep them current. -->
   <a class="skip" href="#main">Skip to content</a>
-  <header><nav class="nav" aria-label="Main navigation"><a class="brand" href="index.html"><i aria-hidden="true"></i>BEAVO</a><div class="links"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="account-deletion.html">Delete account</a><a href="https://apps.apple.com/gb/app/id6791195741" style="color:var(--green)">Get the app</a></div></nav></header>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html"><i aria-hidden="true"></i>BEAVO</a>
+      <div class="links"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="account-deletion.html">Delete account</a></div>
+      <a class="cta" href="https://apps.apple.com/gb/app/id6791195741">Get the app</a>
+    </nav>
+  </header>
   <main id="main">
-    <section class="page-head"><div><div class="eyebrow">Help and contact</div><h1>Beavo Support</h1><p class="lead">Help with accounts, calendar exports, progress and app safety. We aim to acknowledge support requests within two working days.</p></div></section>
-    <section class="contact" aria-labelledby="contact-heading"><div class="contact-inner"><h2 id="contact-heading" style="margin-top:0">Contact Beavo</h2><div class="contact-grid"><div class="contact-item"><h3>Email</h3><a href="mailto:ahmed@dolph.uk">ahmed@dolph.uk</a></div><div class="contact-item"><h3>Telephone</h3><a href="tel:+441210929283">0121 092 9283</a></div><div class="contact-item"><h3>Post</h3><p>Beavo Ltd<br>1 Dudley Park Road<br>Birmingham B27 6QP</p></div></div></div></section>
-    <section class="content">
-      <div class="setup"><strong>Owner action before publishing:</strong> keep the genuine contact information above current. Apple requires the Support URL to contain genuine contact information.</div>
-      <h2>Common questions</h2>
-      <div class="faq">
-        <article><h3>Can I use Beavo without an account?</h3><p>Yes. Choose Continue as guest. Guest progress is stored on that device and may be removed if the app is deleted or its storage is cleared.</p></article>
-        <article><h3>Why is my Apple name missing?</h3><p>Apple may provide a name only on the first authorisation. Beavo stores that first name when supplied. You can change what Beavo calls you in Profile using Preferred name.</p></article>
-        <article><h3>How does Google Calendar work?</h3><p>Beavo can open an event pre-filled in Google Calendar. If you grant the optional calendar permission, supported builds can add an event directly to your primary Google Calendar.</p></article>
-        <article><h3>How does Apple Calendar work?</h3><p>Use Export schedule to create an .ics file. Open or share that file to import the dates into Apple Calendar or another compatible calendar app.</p></article>
-        <article><h3>How do I delete my cloud account?</h3><p>Open Profile, find Account, then choose Delete my account. Read the full <a href="account-deletion.html">account deletion instructions</a>.</p></article>
-        <article><h3>Why did progress not sync?</h3><p>Confirm you are signed into the same Apple or Google account and have an internet connection. Guest progress is local and is not guaranteed to move between devices.</p></article>
+    <section class="phero">
+      <div class="inner">
+        <div class="eyebrow">Help and contact</div>
+        <h1>Beavo Support</h1>
+        <p class="lead">Help with accounts, calendar exports, progress and app safety. We aim to acknowledge support requests within two working days.</p>
+        
+      </div>
+    </section>
+    <article class="prose">
+      <h2 class="rv">Contact Beavo</h2>
+      <div class="contactgrid rv">
+        <div><h3>Email</h3><a href="mailto:ahmed@dolph.uk">ahmed@dolph.uk</a></div>
+        <div><h3>Telephone</h3><a href="tel:+441210929283">0121 092 9283</a></div>
+        <div><h3>Post</h3><p>Beavo Ltd<br>1 Dudley Park Road<br>Birmingham B27 6QP</p></div>
       </div>
 
-      <h2>When contacting support</h2>
-      <p>Include the device model, iOS version, Beavo version, the screen you were using and what happened. Do not send passwords, authentication codes, maternity records or unnecessary health information.</p>
+      <h2 class="rv">Common questions</h2>
+      <div class="cards rv">
+        <article class="card"><h3>Can I use Beavo without an account?</h3><p>Yes. Choose Continue as guest. Guest progress is stored on that device and may be removed if the app is deleted or its storage is cleared.</p></article>
+        <article class="card"><h3>Why is my Apple name missing?</h3><p>Apple may provide a name only on the first authorisation. Beavo stores that first name when supplied. You can change what Beavo calls you in Profile using Preferred name.</p></article>
+        <article class="card"><h3>How does Google Calendar work?</h3><p>Beavo can open an event pre-filled in Google Calendar. If you grant the optional calendar permission, supported builds can add an event directly to your primary Google Calendar.</p></article>
+        <article class="card"><h3>How does Apple Calendar work?</h3><p>Use Export schedule to create an .ics file. Open or share that file to import the dates into Apple Calendar or another compatible calendar app.</p></article>
+        <article class="card"><h3>How do I delete my cloud account?</h3><p>Open Profile, find Account, then choose Delete my account. Read the full <a href="account-deletion.html">account deletion instructions</a>.</p></article>
+        <article class="card"><h3>Why did progress not sync?</h3><p>Confirm you are signed into the same Apple or Google account and have an internet connection. Guest progress is local and is not guaranteed to move between devices.</p></article>
+      </div>
 
-      <div class="urgent"><h2>Do not use support email for urgent care</h2><p>Beavo cannot assess symptoms. For reduced or changed baby movements, bleeding, severe pain, waters breaking with concerning symptoms or another urgent concern, contact the maternity unit or NHS 111. Call 999 in an emergency. Do not wait for a reply from Beavo.</p><p><a href="https://111.nhs.uk/">Use NHS 111 online</a></p></div>
-    </section>
+      <h2 class="rv">When contacting support</h2>
+      <p class="rv">Include the device model, iOS version, Beavo version, the screen you were using and what happened. Do not send passwords, authentication codes, maternity records or unnecessary health information.</p>
+
+      <div class="alert rv">
+        <h2>Do not use support email for urgent care</h2>
+        <p>Beavo cannot assess symptoms. For reduced or changed baby movements, bleeding, severe pain, waters breaking with concerning symptoms or another urgent concern, contact the maternity unit or NHS 111. Call 999 in an emergency. Do not wait for a reply from Beavo.</p>
+        <p><a href="https://111.nhs.uk/">Use NHS 111 online</a></p>
+      </div>
+    </article>
   </main>
-  <footer><div class="footer"><div><strong>BEAVO</strong><p class="small">Independent pregnancy education and partner support.</p></div><div><a href="index.html">Home</a> &nbsp; <a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a><p class="small">&copy; 2026 Beavo Ltd.</p></div></div></footer>
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><i aria-hidden="true"></i>BEAVO</a>
+        <p class="small" style="margin-top:14px">Independent pregnancy education and partner support for the UK. Beavo is not endorsed by, or affiliated with, the NHS.</p>
+        <p class="small">Beavo Ltd, 1 Dudley Park Road, Birmingham B27 6QP, United Kingdom.</p>
+      </div>
+      <div>
+        <div class="footer-links"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="account-deletion.html">Delete account</a></div>
+        <p class="small"><a href="mailto:ahmed@dolph.uk">ahmed@dolph.uk</a> &nbsp;·&nbsp; <a href="tel:+441210929283">0121 092 9283</a></p>
+        <p class="small">&copy; 2026 Beavo Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if(reduce){ items.forEach(function(el){ el.classList.add('in'); }); return; }
+  var ticking = false;
+  function pass(){
+    ticking = false;
+    var vh = window.innerHeight;
+    for(var i = items.length - 1; i >= 0; i--){
+      if(items[i].getBoundingClientRect().top < vh * 0.92){
+        items[i].classList.add('in');
+        items.splice(i, 1);
+      }
+    }
+  }
+  function onScroll(){ if(!ticking && items.length){ ticking = true; requestAnimationFrame(pass); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  pass();
+})();
+</script>
+
 </body>
 </html>
