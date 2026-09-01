@@ -157,6 +157,55 @@
        as a decorative layer rather than a mismatch. None of them appear
        in the after-a-loss section. */
     .spot{width:58px;height:58px;margin:0 0 4px -3px;display:block}
+    /* bunny */
+    .bu-b{animation:bu-hop 2.8s ease-in-out infinite}
+    .bu-earL{transform-box:fill-box;transform-origin:50% 100%;animation:bu-twitchL 2.8s ease-in-out infinite}
+    .bu-earR{transform-box:fill-box;transform-origin:50% 100%;animation:bu-twitchR 2.8s ease-in-out infinite}
+    .bu-lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:bu-blink 5s infinite}
+    @keyframes bu-hop{0%,70%,100%{transform:translateY(0)}82%{transform:translateY(-13px)}92%{transform:translateY(0)}}
+    @keyframes bu-twitchL{0%,60%,100%{transform:rotate(-4deg)}70%{transform:rotate(-13deg)}}
+    @keyframes bu-twitchR{0%,60%,100%{transform:rotate(4deg)}75%{transform:rotate(13deg)}}
+    @keyframes bu-blink{0%,93%{transform:scaleY(0)}95%,97%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+    @media(prefers-reduced-motion:reduce){.bu-b,.bu-earL,.bu-earR,.bu-lid{animation:none}}
+    /* owl */
+    .ow-b{animation:ow-sway 3.6s ease-in-out infinite}
+    .ow-lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:ow-blink 4.2s infinite}
+    .ow-wingL,.ow-wingR{transform-box:fill-box;animation:ow-tuck 3.6s ease-in-out infinite}
+    .ow-wingL{transform-origin:80% 10%}.ow-wingR{transform-origin:20% 10%}
+    @keyframes ow-sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+    @keyframes ow-tuck{0%,100%{transform:rotate(0)}50%{transform:rotate(6deg)}}
+    @keyframes ow-blink{0%,92%{transform:scaleY(0)}94%,97%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+    @media(prefers-reduced-motion:reduce){.ow-b,.ow-lid,.ow-wingL,.ow-wingR{animation:none}}
+    /* bird */
+    .bi-b{animation:bi-glide 3.2s ease-in-out infinite}
+    .bi-wing{transform-box:fill-box;transform-origin:38% 92%;animation:bi-flap 1s ease-in-out infinite}
+    .bi-lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:bi-blink 4.4s infinite}
+    @keyframes bi-glide{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-15px) rotate(2deg)}}
+    @keyframes bi-flap{0%,100%{transform:rotate(6deg) scaleY(1)}50%{transform:rotate(-30deg) scaleY(.82)}}
+    @keyframes bi-blink{0%,94%{transform:scaleY(0)}96%,98%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+    @media(prefers-reduced-motion:reduce){.bi-b,.bi-wing,.bi-lid{animation:none}}
+    /* duckling */
+    .du-body{animation:du-waddle 2.4s ease-in-out infinite}
+    .du-head{animation:du-nod 2.4s ease-in-out infinite}
+    .du-wing{transform-box:fill-box;transform-origin:20% 40%;animation:du-flap 2.4s ease-in-out infinite}
+    .du-eyelid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:du-blink 4.6s infinite}
+    .du-foot{animation:du-step 2.4s ease-in-out infinite}
+    .du-foot.du-b{animation-delay:-1.2s}
+    @keyframes du-waddle{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-3px)}}
+    @keyframes du-nod{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-3deg)}}
+    @keyframes du-flap{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-22deg)}}
+    @keyframes du-step{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    @keyframes du-blink{0%,94%{transform:scaleY(0)}96%,98%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+    @media (prefers-reduced-motion:reduce){.du-body,.du-head,.du-wing,.du-eyelid,.du-foot{animation:none}}
+    /* hedgehog */
+    .he-b{transform-box:view-box;transform-origin:50% 80%;animation:he-breathe 3.4s ease-in-out infinite}
+    .he-z{opacity:0;animation:he-rise 3.6s ease-in-out infinite}
+    .he-z2{animation-delay:1.2s}.he-z3{animation-delay:2.4s}
+    @keyframes he-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+    @keyframes he-rise{0%{opacity:0;transform:translate(0,0) scale(.7)}
+    25%{opacity:.9}
+    100%{opacity:0;transform:translate(16px,-42px) scale(1.15)}}
+    @media(prefers-reduced-motion:reduce){.he-b{animation:none}.he-z{animation:none;opacity:.55}}
     .band.night .spot{filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
     .head{max-width:860px}
     .head h2{font-size:clamp(36px,6vw,74px);line-height:1.0;margin:12px 0 0;color:var(--green)}
@@ -483,7 +532,7 @@
 
         <div class="row">
           <div class="rv">
-            <img class="spot" src="assets/bunny.svg" alt="" width="240" height="240" loading="lazy">
+            <svg class="spot" viewBox="0 0 240 240" aria-hidden="true" focusable="false"><g transform="translate(120,150)"><g class="bu-b"> <ellipse class="bu-earL" cx="-20" cy="-74" rx="13" ry="42" fill="#C9A98C"/> <ellipse class="bu-earL" cx="-20" cy="-74" rx="6" ry="31" fill="#F0C9C2"/> <ellipse class="bu-earR" cx="20" cy="-74" rx="13" ry="42" fill="#C9A98C"/> <ellipse class="bu-earR" cx="20" cy="-74" rx="6" ry="31" fill="#F0C9C2"/> <ellipse cx="0" cy="20" rx="50" ry="44" fill="#C9A98C"/> <ellipse cx="0" cy="30" rx="30" ry="26" fill="#EFE0D0"/> <circle cx="0" cy="-24" r="38" fill="#C9A98C"/> <circle cx="-14" cy="-30" r="6.5" fill="#3A2E22"/> <circle cx="14" cy="-30" r="6.5" fill="#3A2E22"/> <circle cx="-12" cy="-32.5" r="2.2" fill="#fff"/> <circle cx="16" cy="-32.5" r="2.2" fill="#fff"/> <ellipse class="bu-lid" cx="-14" cy="-37" rx="7.5" ry="7" fill="#C9A98C"/> <ellipse class="bu-lid" cx="14" cy="-37" rx="7.5" ry="7" fill="#C9A98C"/> <path d="M0 -14 l-6 7 h12 z" fill="#E08A8A"/> <path d="M0 -7 v5 M-8 2 q8 6 16 0" stroke="#8A6B52" stroke-width="3" fill="none" stroke-linecap="round"/> <circle cx="52" cy="34" r="13" fill="#EFE0D0"/> </g></g></svg>
             <div class="eyebrow">Home</div>
             <h3>It opens on the next thing worth doing.</h3>
             <p>One briefing for the week you are in, and three ways in. No streak to keep, no day to miss.</p>
@@ -501,7 +550,7 @@
 
         <div class="row flip">
           <div class="rv">
-            <img class="spot" src="assets/owl.svg" alt="" width="240" height="240" loading="lazy">
+            <svg class="spot" viewBox="0 0 240 240" aria-hidden="true" focusable="false"><g transform="translate(120,126)"><g class="ow-b"> <path d="M-52 -46 l6 -30 l24 20 z" fill="#8A5A34"/> <path d="M52 -46 l-6 -30 l-24 20 z" fill="#8A5A34"/> <ellipse cx="0" cy="0" rx="58" ry="62" fill="#A26D3E"/> <ellipse cx="0" cy="14" rx="38" ry="42" fill="#E8D5B8"/> <path class="ow-wingL" d="M-52 -14 q-16 30 -2 54 q14 4 20 -14 z" fill="#8A5A34"/> <path class="ow-wingR" d="M52 -14 q16 30 2 54 q-14 4 -20 -14 z" fill="#8A5A34"/> <circle cx="-22" cy="-16" r="21" fill="#F7EFE0"/> <circle cx="22" cy="-16" r="21" fill="#F7EFE0"/> <circle cx="-22" cy="-16" r="10" fill="#3A2E22"/> <circle cx="22" cy="-16" r="10" fill="#3A2E22"/> <circle cx="-19" cy="-19" r="3.4" fill="#fff"/> <circle cx="25" cy="-19" r="3.4" fill="#fff"/> <ellipse class="ow-lid" cx="-22" cy="-37" rx="22" ry="21" fill="#A26D3E"/> <ellipse class="ow-lid" cx="22" cy="-37" rx="22" ry="21" fill="#A26D3E"/> <path d="M0 -8 l-9 12 h18 z" fill="#EF8A24"/> <path d="M-16 62 h14 M2 62 h14" stroke="#EF8A24" stroke-width="7" stroke-linecap="round"/> </g></g></svg>
             <div class="eyebrow">Learn</div>
             <h3>Plain English, with the source attached.</h3>
             <p>Pregnancy, labour, pain relief, caesarean birth, recovery, feeding, safer sleep and mental health after birth.</p>
@@ -519,7 +568,7 @@
 
         <div class="row">
           <div class="rv">
-            <img class="spot" src="assets/bird.svg" alt="" width="240" height="240" loading="lazy">
+            <svg class="spot" viewBox="0 0 240 240" aria-hidden="true" focusable="false"><g transform="translate(120,124)"><g class="bi-b"> <!-- tail --> <path d="M-40 2 l-42 -16 l6 20 l-8 18 z" fill="#2F5D46"/> <!-- body --> <ellipse cx="0" cy="4" rx="44" ry="31" fill="#3E7A5B"/> <!-- belly --> <ellipse cx="4" cy="14" rx="30" ry="19" fill="#DCEBDF"/> <!-- head --> <circle cx="34" cy="-20" r="25" fill="#3E7A5B"/> <!-- beak --> <path d="M57 -20 l24 7 l-24 8 z" fill="#EF8A24"/> <!-- eye --> <circle cx="41" cy="-26" r="6" fill="#22332A"/> <circle cx="43.5" cy="-28.5" r="2.2" fill="#fff"/> <ellipse class="bi-lid" cx="41" cy="-33" rx="7" ry="6.5" fill="#3E7A5B"/> <!-- legs --> <path d="M-2 33 v12 M12 33 v12" stroke="#EF8A24" stroke-width="5" stroke-linecap="round"/> <!-- the single near wing, drawn last so it sits above the body --> <path class="bi-wing" d="M-14 -6 q22 -46 54 -30 q-6 34 -40 44 z" fill="#5FA37A"/> </g></g></svg>
             <div class="eyebrow">The call</div>
             <h3>The call you will have to make, already written down.</h3>
             <p>Time the contractions and Beavo assembles the sentences you read down the phone. It decides nothing — if either of you is worried, you ring.</p>
@@ -537,7 +586,7 @@
 
         <div class="row flip">
           <div class="rv">
-            <img class="spot" src="assets/duckling.svg" alt="" width="240" height="240" loading="lazy">
+            <svg class="spot" viewBox="0 0 240 240" aria-hidden="true" focusable="false"><g transform="translate(112,118)"> <g class="du-foot" fill="#E08A2A"><path d="M-26 62 l-13 12 h26 z"/></g> <g class="du-foot du-b" fill="#E08A2A"><path d="M18 62 l-13 12 h26 z"/></g> <g class="du-body"> <ellipse cx="0" cy="26" rx="52" ry="45" fill="#F2C14E"/> <ellipse cx="0" cy="34" rx="34" ry="28" fill="#F7D77E"/> <path class="du-wing" d="M-40 12 q-22 16 -6 38 q16 8 26 -10 z" fill="#E6AF3C"/> <g class="du-head"> <circle cx="4" cy="-34" r="35" fill="#F2C14E"/> <path d="M30 -32 q22 4 22 12 q0 8 -22 9 z" fill="#EF8A24"/> <circle cx="14" cy="-42" r="6.5" fill="#3A2E22"/> <circle cx="16" cy="-44.5" r="2.2" fill="#fff"/> <ellipse class="du-eyelid" cx="14" cy="-48.5" rx="7.5" ry="7" fill="#F2C14E"/> <path d="M-14 -58 q10 -12 22 -6" stroke="#E6AF3C" stroke-width="5" fill="none" stroke-linecap="round"/> </g> </g> </g></svg>
             <div class="eyebrow">Hospital bag</div>
             <h3>A bag list with a section for you.</h3>
             <p>Most checklists pack for her and for the baby and forget the person who will be awake for thirty hours in a plastic chair.</p>
@@ -569,7 +618,7 @@
       <div class="aurora amb" aria-hidden="true"><b></b><b></b></div>
       <div class="inner" style="position:relative">
         <div class="intro2">
-          <div class="head rv"><img class="spot" src="assets/hedgehog.svg" alt="" width="240" height="240" loading="lazy"><div class="eyebrow" style="color:#FFC98A">The first weeks</div><h2>Trackers built against the market.</h2></div>
+          <div class="head rv"><svg class="spot" viewBox="0 0 240 240" aria-hidden="true" focusable="false"><g transform="translate(116,142)"><g class="he-b"> <path d="M-70 22 q4 -62 46 -74 q46 -14 74 30 q16 26 6 44 z" fill="#7C5B44"/> <g fill="#5E4433"> <path d="M-56 -6 l-12 -20 l20 6 z"/><path d="M-30 -30 l-8 -24 l20 12 z"/> <path d="M-2 -44 l0 -26 l18 18 z"/><path d="M28 -48 l10 -22 l12 22 z"/> <path d="M54 -34 l20 -12 l4 22 z"/> </g> <ellipse cx="-46" cy="18" rx="34" ry="26" fill="#E3C9A8"/> <path d="M-70 14 q-10 4 -10 12" stroke="#C9A882" stroke-width="5" fill="none" stroke-linecap="round"/> <circle cx="-74" cy="20" r="7" fill="#4A382A"/> <path d="M-58 12 q6 5 12 0" stroke="#4A382A" stroke-width="4" fill="none" stroke-linecap="round"/> <circle cx="-34" cy="26" r="7" fill="#F0B9A6" opacity=".7"/> </g> <g fill="#3E7A5B" font-family="system-ui,sans-serif" font-weight="800"> <text class="he-z" x="150" y="76" font-size="20">z</text> <text class="he-z he-z2" x="150" y="76" font-size="26">z</text> <text class="he-z he-z3" x="150" y="76" font-size="16">z</text> </g></g></svg><div class="eyebrow" style="color:#FFC98A">The first weeks</div><h2>Trackers built against the market.</h2></div>
           <p class="sub rv s1">Feed-tracking apps sell targets, streaks and red numbers to people who have not slept in nine days. There is published evidence that intensive tracking goes hand in hand with worse postnatal anxiety. So Beavo tracks sleep, feeds and nappies with nothing that can be failed.</p>
         </div>
 
