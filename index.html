@@ -152,6 +152,12 @@
     .claim p{margin:0;color:var(--steel);font-size:17px;max-width:30ch;margin-inline:auto}
     .claim svg{width:36px;height:36px}
 
+    /* Spot creatures: a deliberately different, flatter style from the
+       3D mascot, kept small and never next to it, so the contrast reads
+       as a decorative layer rather than a mismatch. None of them appear
+       in the after-a-loss section. */
+    .spot{width:58px;height:58px;margin:0 0 4px -3px;display:block}
+    .band.night .spot{filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
     .head{max-width:860px}
     .head h2{font-size:clamp(36px,6vw,74px);line-height:1.0;margin:12px 0 0;color:var(--green)}
     .band.night .head h2{color:#fff}
@@ -477,6 +483,7 @@
 
         <div class="row">
           <div class="rv">
+            <img class="spot" src="assets/bunny.svg" alt="" width="240" height="240" loading="lazy">
             <div class="eyebrow">Home</div>
             <h3>It opens on the next thing worth doing.</h3>
             <p>One briefing for the week you are in, and three ways in. No streak to keep, no day to miss.</p>
@@ -494,6 +501,7 @@
 
         <div class="row flip">
           <div class="rv">
+            <img class="spot" src="assets/owl.svg" alt="" width="240" height="240" loading="lazy">
             <div class="eyebrow">Learn</div>
             <h3>Plain English, with the source attached.</h3>
             <p>Pregnancy, labour, pain relief, caesarean birth, recovery, feeding, safer sleep and mental health after birth.</p>
@@ -511,6 +519,7 @@
 
         <div class="row">
           <div class="rv">
+            <img class="spot" src="assets/bird.svg" alt="" width="240" height="240" loading="lazy">
             <div class="eyebrow">The call</div>
             <h3>The call you will have to make, already written down.</h3>
             <p>Time the contractions and Beavo assembles the sentences you read down the phone. It decides nothing — if either of you is worried, you ring.</p>
@@ -528,6 +537,7 @@
 
         <div class="row flip">
           <div class="rv">
+            <img class="spot" src="assets/duckling.svg" alt="" width="240" height="240" loading="lazy">
             <div class="eyebrow">Hospital bag</div>
             <h3>A bag list with a section for you.</h3>
             <p>Most checklists pack for her and for the baby and forget the person who will be awake for thirty hours in a plastic chair.</p>
@@ -559,7 +569,7 @@
       <div class="aurora amb" aria-hidden="true"><b></b><b></b></div>
       <div class="inner" style="position:relative">
         <div class="intro2">
-          <div class="head rv"><div class="eyebrow" style="color:#FFC98A">The first weeks</div><h2>Trackers built against the market.</h2></div>
+          <div class="head rv"><img class="spot" src="assets/hedgehog.svg" alt="" width="240" height="240" loading="lazy"><div class="eyebrow" style="color:#FFC98A">The first weeks</div><h2>Trackers built against the market.</h2></div>
           <p class="sub rv s1">Feed-tracking apps sell targets, streaks and red numbers to people who have not slept in nine days. There is published evidence that intensive tracking goes hand in hand with worse postnatal anxiety. So Beavo tracks sleep, feeds and nappies with nothing that can be failed.</p>
         </div>
 
