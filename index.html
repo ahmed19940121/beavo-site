@@ -112,8 +112,24 @@
     .receipts span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange);flex:none}
     .hero-art{position:relative;justify-self:center;width:100%;max-width:460px}
     .hero-art:before{content:"";position:absolute;inset:4% -5% -7% -5%;border-radius:50%;background:var(--green-soft)}
-    .hero-art img{position:relative;width:100%;height:auto;animation:bob 6s ease-in-out infinite alternate}
+    .mascot{position:relative;animation:bob 6s ease-in-out infinite alternate}
+    .mascot img{position:relative;width:100%;height:auto}
     @keyframes bob{to{transform:translateY(-14px)}}
+    /* The eyelids are two ellipses in the mask's own colour, sampled off
+       the render at rgb(65,57,49), scaling down from the top of their own
+       box. Positions measured from the artwork rather than guessed. */
+    .lids{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+    .lid{fill:#413931;transform-box:fill-box;transform-origin:50% 0%;transform:scaleY(0);
+      animation:blink 5.4s ease-in-out infinite}
+    @keyframes blink{
+      0%,88%{transform:scaleY(0)}
+      90%{transform:scaleY(1)}
+      92%{transform:scaleY(0)}
+      94%{transform:scaleY(1)}
+      96%,100%{transform:scaleY(0)}
+    }
+    .mascot:hover{animation-play-state:paused}
+    .mascot:hover .lid{animation:none;transform:scaleY(0)}
 
     /* ---------- reveal, gated on .js so nothing is ever hidden ---------- */
     .js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -347,7 +363,8 @@
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
-      .hero-art img,.aurora b,.float{animation:none!important}
+      .mascot,.lid,.aurora b,.float{animation:none!important}
+      .lid{transform:scaleY(0)}
       .line>i{transform:none;animation:none}
       .fade-up{opacity:1;transform:none;animation:none}
       .js .rv{opacity:1;transform:none;transition:none}
@@ -392,7 +409,13 @@
           </div>
         </div>
         <div class="hero-art fade-up d2">
-          <img src="assets/mascot.webp" alt="Beavo, the app's beaver mascot, wearing a mask" width="911" height="1073">
+          <div class="mascot amb">
+            <img src="assets/mascot.webp" alt="Beavo, the app's beaver mascot, wearing a mask" width="645" height="760">
+            <svg class="lids" viewBox="0 0 645 760" aria-hidden="true" focusable="false">
+              <ellipse class="lid" cx="167" cy="243" rx="51" ry="45"/>
+              <ellipse class="lid" cx="419" cy="243" rx="49" ry="45"/>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
