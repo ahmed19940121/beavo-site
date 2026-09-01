@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="A duckling, waddling">
+<style>
+ .body{animation:waddle 2.4s ease-in-out infinite}
+ .head{animation:nod 2.4s ease-in-out infinite}
+ .wing{transform-box:fill-box;transform-origin:20% 40%;animation:flap 2.4s ease-in-out infinite}
+ .eyelid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:blink 4.6s infinite}
+ .foot{animation:step 2.4s ease-in-out infinite}
+ .foot.b{animation-delay:-1.2s}
+ @keyframes waddle{0%,100%{transform:rotate(-3deg) translateY(0)}50%{transform:rotate(3deg) translateY(-3px)}}
+ @keyframes nod{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-3deg)}}
+ @keyframes flap{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-22deg)}}
+ @keyframes step{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+ @keyframes blink{0%,94%{transform:scaleY(0)}96%,98%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+ @media (prefers-reduced-motion:reduce){.body,.head,.wing,.eyelid,.foot{animation:none}}
+</style>
+<g transform="translate(112,118)">
+  <g class="foot"  fill="#E08A2A"><path d="M-26 62 l-13 12 h26 z"/></g>
+  <g class="foot b" fill="#E08A2A"><path d="M18 62 l-13 12 h26 z"/></g>
+  <g class="body">
+    <ellipse cx="0" cy="26" rx="52" ry="45" fill="#F2C14E"/>
+    <ellipse cx="0" cy="34" rx="34" ry="28" fill="#F7D77E"/>
+    <path class="wing" d="M-40 12 q-22 16 -6 38 q16 8 26 -10 z" fill="#E6AF3C"/>
+    <g class="head">
+      <circle cx="4" cy="-34" r="35" fill="#F2C14E"/>
+      <path d="M30 -32 q22 4 22 12 q0 8 -22 9 z" fill="#EF8A24"/>
+      <circle cx="14" cy="-42" r="6.5" fill="#3A2E22"/>
+      <circle cx="16" cy="-44.5" r="2.2" fill="#fff"/>
+      <ellipse class="eyelid" cx="14" cy="-48.5" rx="7.5" ry="7" fill="#F2C14E"/>
+      <path d="M-14 -58 q10 -12 22 -6" stroke="#E6AF3C" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+</g>
+</svg>
