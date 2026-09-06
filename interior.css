@@ -1,0 +1,28 @@
+/* Shared finish for the existing support and legal pages. Their text and routes stay intact. */
+@font-face{font-family:Baloo;src:url('assets/baloo-2.woff2') format('woff2');font-weight:700 800;font-display:swap}
+:root{--ink:#173b32;--muted:#57655c;--faint:#64705e;--paper:#faf7ef;--warm:#eeeede;--sage:#e5eada;--green:#2f6650;--green-deep:#153d32;--orange:#ffac69;--orange-deep:#91481d;--line:#d6d9cf;--dark:#153d32;--maxw:1240px}
+header{background:var(--paper)}
+.nav{min-height:83px;gap:25px}
+.brand{font-family:Baloo,system-ui,sans-serif;font-size:35px!important;text-transform:lowercase;letter-spacing:-.05em!important;line-height:1}
+.brand i{display:none}.brand:after{content:".";color:#b76a34}
+.cta{background:var(--green-deep);color:var(--paper);font-weight:600;padding:12px 20px}
+.phero{padding-block:85px;background:var(--dark)}
+.phero:before{display:none}
+.phero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,6.2vw,80px);font-weight:400;letter-spacing:-.055em;line-height:1.06;max-width:950px}
+.phero .lead{font-size:18px;max-width:680px;color:#c5d3c3;margin-top:24px}
+.phero .eyebrow{color:#e3bc88;font-size:11px;letter-spacing:.15em;margin-bottom:25px}
+.prose{max-width:940px;font-size:16px;padding-block:60px 80px}
+.prose h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:31px;letter-spacing:-.035em}
+.prose h3{font-size:18px;font-weight:650}
+.prose p,.prose li{color:var(--muted)}
+.card,.step{border-radius:15px!important;box-shadow:none!important;background:#f1f2e6!important;border-color:var(--line)!important}
+.contactgrid{background:#e5eada;border-radius:17px;padding:28px!important;gap:27px}
+.contactgrid h3{font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+#personal-support{scroll-margin-top:110px}#personal-support .card>a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:600;text-underline-offset:4px}
+.alert{border-radius:15px;background:#f4e8dc;border-color:#d9b692}
+footer{background:#e9eddf;border-top:1px solid var(--line);padding-block:40px}
+footer .brand{color:var(--ink)}
+.rv{opacity:1!important;transform:none!important}
+a:focus-visible,button:focus-visible{outline:3px solid #b76a34}
+@media(max-width:650px){.nav{gap:14px;flex-wrap:wrap;padding-block:14px}.links{flex-wrap:wrap;gap:10px 20px}.links a{min-height:44px;display:inline-flex;align-items:center}.phero{padding-block:58px}.phero .lead{font-size:16px}.prose{padding-block:40px 60px}.prose h2{font-size:28px}.contactgrid{padding:24px!important;grid-template-columns:1fr}.cta{font-size:12px;padding:10px 15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
